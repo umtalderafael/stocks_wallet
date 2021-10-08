@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<% model_class = Investment %>
+<h1>Investmentos</h1>
+<table>
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:code) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:company) %></th>
+      <th><%= model_class.human_attribute_name(:country_code) %></th>
+      <th><%= model_class.human_attribute_name(:investment_type_id) %></th>
+      <th></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @investments.each do |investment| %>
+      <tr>
+        <td><%= investment.code %></td>
+        <td><%= investment.name %></td>
+        <td><%= investment.company %></td>
+        <td><%= investment.country_code %></td>
+        <td><%= investment.investment_type.name %></td>
+        <td><%= link_to 'Show', investment %></td>
+        <td><%= link_to 'Edit', edit_investment_path(investment) %></td>
+        <td><%= link_to 'Destroy', investment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Investment', new_investment_path %>

@@ -18,6 +18,20 @@ Rails.application.configure do
     'Cache-Control' => "public, max-age=#{1.hour.to_i}"
   }
 
+  config.action_mailer.raise_delivery_errors = false
+
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.gmail.com',
+    user_name:            'deyxestar@gmail.com',
+    password:             'rb058801',    
+    domain:               'gmail.com',
+    authentication:       'plain', 
+    port:                 587,
+    enable_starttls_auto: true
+  }
+
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false

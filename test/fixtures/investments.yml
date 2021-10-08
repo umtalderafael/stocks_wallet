@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+ code: Evo3
+ name: Evol On
+ company: Evol
+ country_code: BR
+ investment_type: one
+
+two:
+ code: Evo4
+ name: Evol PN
+ company: Evol
+ country_code: BR
+ investment_type: one

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+ operation: '+'
+ name: Compra
+ description: compra
+ 
+two:
+ operation: '-'
+ name: Venda
+ description: Bla bla bla

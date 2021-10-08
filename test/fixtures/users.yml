@@ -1,11 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  email: MyString
-  password: MyString
+  name: Evanir
+  email: evanir@e8.com.br
+  encrypted_password: "$2a$12$VikiwmIs0wjlmmQRMhYpyO4wzZWXiwUUahR.8XC2fJqjO2Jhcxlci"
+  born_at:  <%= '12/03/1970'.to_date %>  
 
-two:
-  name: MyString
-  email: MyString
-  password: MyString

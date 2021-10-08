@@ -1,23 +1,22 @@
 class User < ApplicationRecord
- validates :name, :email, presence: true
- validate :email_valid?
+  
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :confirmable, :trackable  
 
- private
+  validates :name, :born_at, presence: true
 
- VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i.freeze
+  validate :email_valid? 
 
- INVALID_CARACTERS = [' ', '!', '#', '$', '%', '&', '*', '(', ')', '+', '=', ':', ';', ',', '<', '>', '?', '/', '{', '}', '\[', '\]', '\\', ',', '"', '`', '~', '@@', '..', 'ç', 'á', 'é', 'í', 'ó', 'ú', 'â', 'ô', 'ê', 'ã', 'õ'].freeze
+  has_many :transactions, dependent: :restrict_with_exception
+  
 
- INVALID_HOSTS = %w[gmail.com.br hotmail.com.br].freeze
+  private
 
- def email_valid?
-   return false if email.blank?
+  INVALID_CARACTERS = [' ', '!', '#', '$', '%', '&', '*', '(', ')', '+', '=', ':', ';', ',', '<', '>', '?', '/', '{', '}', '\[', '\]', '\\', ',', '"', '`', '~', '@@', '..', 'ç', 'á', 'é', 'í', 'ó', 'ú', 'â', 'ô', 'ê', 'ã', 'õ'].freeze
 
-   if email =~ VALID_EMAIL_REGEX
-     errors.add(:email, 'caracter invalido!') if INVALID_CARACTERS.any? { |w| email.strip.include?(w) }
+  INVALID_HOSTS = %w[gmail.com.br hotmail.com.br].freeze
+
+  def email_valid?  
      errors.add(:email, 'host invalido!') if INVALID_HOSTS.any? { |w| email.strip.include?(w) }
-   else
-     errors.add(:email, 'Formato invalido!')
-   end
- end
-end
+  end
+
+end 

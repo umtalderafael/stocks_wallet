@@ -1,0 +1,2 @@
+module FundamentalInfoHelper
+end

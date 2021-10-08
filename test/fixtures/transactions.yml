@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2021-10-05
+  broker: one
+  transaction_type: one
+  user: one
+  investment: one
+  amount: 1
+  value: 9.99
+
+two:
+  date: 2021-10-05
+  broker: two
+  transaction_type: two
+  user: two
+  investment: two
+  amount: 1
+  value: 9.99

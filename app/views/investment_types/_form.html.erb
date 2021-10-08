@@ -1,0 +1,27 @@
+<%= form_with(model: investment_type, local: true) do |form| %>
+  <% if investment_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(investment_type.errors.count, "error") %> prohibited this investment_type from being saved:</h2>
+
+      <ul>
+      <% investment_type.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

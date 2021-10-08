@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  investment: one
+  info: MyText
+  institutional_holders: MyText
+
+two:
+  investment: two
+  info: MyText
+  institutional_holders: MyText
